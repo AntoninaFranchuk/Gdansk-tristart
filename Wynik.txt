@@ -1,0 +1,11 @@
+# ...existing code...
+
+# Pobierz odjazdy i zapisz do pliku wynik.txt
+with plik_path.open("w", encoding="utf-8") as f:
+    for stop_key, stop_id in stops.items():
+        nazwa_przystanku = stop_key.replace("_", " ").title()
+        deps = get_departures(stop_id)
+        f.write(f"{nazwa_przystanku}:\n")
+        f.write(format_departures(deps))
+        f.write("\n\n")
+# ...existing code... 
